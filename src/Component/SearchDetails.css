@@ -1,3 +1,6 @@
 .search-details-container {
+    position: absolute;
+    top:500px;
+    left:0px;
     background: lightseagreen;
 }

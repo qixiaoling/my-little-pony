@@ -1,38 +1,45 @@
-import React, {useEffect, useState} from 'react';
-import './SearchDetails.css';
-import axios from "axios";
+import React, {useState} from 'react';
+import axios from 'axios';
+import './SearchDetails.css'
+
+
 
 function SearchDetails({searchText}) {
+    const [ponyData, setPonyData] = useState([]);
 
-    const[searchResult, setSearchResult] = useState([]);
+    async function fetchData() {
+        try {
+            const result = await axios.get('http://ponyweb.ml/v1/character/Applejack');
+            setPonyData(result.data.data);
 
-    useEffect(() => {
-
-        async function fetchData() {
-            try {
-                const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}`);
-                setSearchResult(result.data);
-                console.log(result.data)
-                console.log(searchResult)
-            } catch (e) {
-                console.error(e)
-
-            }
+        } catch (e) {
+            console.error(e);
         }
-        if(searchText){
-            fetchData();
-        }
-
-
-    }, [searchText])
-
+    }
 
     return (
-        <div className='search-details-container'>
-            {searchText}
-        </div>
+        <>
+            <div className='search-details-container'>
+                <div className="weather-header">
+                    <span className="location-details">
+            {ponyData.map((pony)=>{
+                return(
+                    <p key={pony.name}>{pony.name}</p>
+                )
+            })}
+                        <button
+                            type="button"
+                            onClick={fetchData}
+                        >
+              Haal data op!
+            </button>
+                    </span>
+                </div>
 
-    )
+
+            </div>
+        </>
+    );
 }
 
 export default SearchDetails;
