@@ -11,6 +11,10 @@ function SearchDetails({searchText}) {
         try {
             const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}`);
             setPonyData(result.data.data);
+            console.log(result.data.data)
+            console.log(ponyData) /*the problem was that I thought the ponyData was still empty, setState has not worked. because this
+            was still []. But with the working version, the data is there, the difference is that I now mapped the ponyData in the
+            return section.*/
 
         } catch (e) {
             console.error(e);
@@ -20,6 +24,7 @@ function SearchDetails({searchText}) {
     useEffect(()=>{
         fetchData()
     },[])
+
 
     return (
         <>
