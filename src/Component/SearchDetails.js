@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './SearchDetails.css'
 
@@ -9,13 +9,17 @@ function SearchDetails({searchText}) {
 
     async function fetchData() {
         try {
-            const result = await axios.get('http://ponyweb.ml/v1/character/Applejack');
+            const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}`);
             setPonyData(result.data.data);
 
         } catch (e) {
             console.error(e);
         }
     }
+
+    useEffect(()=>{
+        fetchData()
+    },[])
 
     return (
         <>
