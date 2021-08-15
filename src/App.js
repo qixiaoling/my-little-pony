@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Home from "./page/Home";
 import PonyDetails from "./page/PonyDetails";
 import Navbar from "./Component/Navbar";
-import SearchDetails from "./Component/SearchDetails";
+import SearchDetails from "./page/SearchDetails";
 
 
 function App() {

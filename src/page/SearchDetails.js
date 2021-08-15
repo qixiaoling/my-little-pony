@@ -9,7 +9,7 @@ function SearchDetails({searchText}) {
 
     async function fetchData() {
         try {
-            const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}`);
+            const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}?limit=1`);
             setPonyData(result.data.data);
             console.log(result.data.data)
             console.log(ponyData) /*the problem was that I thought the ponyData was still empty, setState has not worked. because this
