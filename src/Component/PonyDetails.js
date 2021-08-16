@@ -4,7 +4,7 @@ import './PonyDetails.css'
 import axios from "axios";
 
 function PonyDetails() {
-
+    const[index, setIndex] = useState(2);
     const[ponyData, setPonyData] = useState([])
     const params = useParams();
     console.log(params)
@@ -21,24 +21,39 @@ function PonyDetails() {
         getPonyData();
     },[])
 
+    function prevImage(num){
+        setIndex(checkNumber(num -1) );
+
+    }
+    function nextImage(num){
+        setIndex(checkNumber(num +1) );
+
+    }
+
+    function checkNumber(num){
+        if(num<0){
+            return ponyData[0].image.length-1;
+        }
+        if(num>ponyData[0].image.length-1){
+            return 0;
+        }
+        return num;/*if none of the situation matches, then just return the num*/
+    }
+
     return(
         <div className='pony-details-container'>
             {ponyData.map((pony)=>{
                 return(
                     <section className='pony-details-section' key={pony.id}>
                         <div className='pony-left-wrapper'>
-                            <button>
-
+                            <button onClick={()=>prevImage(index)}>
+                                <i className="fas fa-angle-left"/>
                             </button>
-                            {pony.images.map((item)=>{
-                                const{index} = item;
-                                return(
-                                    <img key={index} />
-                                )
-                            })}
-                            <button>
-
+                            <img src={pony.image[index]}/>
+                            <button onClick={()=>nextImage(index)}>
+                                <i className="fas fa-angle-right"/>
                             </button>
+
                         </div>
                     </section>
                 )
