@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import './SearchDetails.css'
+import './SearchDetails.css';
+import PonyCard from "../Component/PonyCard";
 
 
 
@@ -9,7 +10,7 @@ function SearchDetails({searchText}) {
 
     async function fetchData() {
         try {
-            const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}?limit=1`);
+            const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}`);
             setPonyData(result.data.data);
             console.log(result.data.data)
             console.log(ponyData) /*the problem was that I thought the ponyData was still empty, setState has not worked. because this
@@ -27,27 +28,9 @@ function SearchDetails({searchText}) {
 
 
     return (
-        <>
-            <div className='search-details-container'>
-                <div className="weather-header">
-                    <span className="location-details">
-            {ponyData.map((pony)=>{
-                return(
-                    <p key={pony.name}>{pony.name}</p>
-                )
-            })}
-                        <button
-                            type="button"
-                            onClick={fetchData}
-                        >
-              Haal data op!
-            </button>
-                    </span>
-                </div>
-
-
-            </div>
-        </>
+        <div>
+            <PonyCard ponyData={ponyData}/>
+        </div>
     );
 }
 
