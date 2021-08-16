@@ -28,8 +28,12 @@ function SearchDetails({searchText}) {
 
 
     return (
-        <div>
-            <PonyCard ponyData={ponyData}/>
+        <div className='search-details-container'>
+            <div className='search-details-section'>
+                <h2>You Have Searched:</h2>
+                <PonyCard ponyData={ponyData}/>
+            </div>
+
         </div>
     );
 }
