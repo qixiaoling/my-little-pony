@@ -14,6 +14,8 @@ function SearchBar ({searchBarQuery}) {
     function handleClick() {
         searchBarQuery(query);
         history.push('/search')
+
+
     }
     return(
         <div className='searchbar-container'>
@@ -23,9 +25,7 @@ function SearchBar ({searchBarQuery}) {
                         id='search-bar'
                         type='text'
                         onChange={changeHandler}
-
                     />
-
                 </label>
                 <button className='search-btn' type='button' onClick={handleClick}>
                     <i className="fas fa-search"></i>

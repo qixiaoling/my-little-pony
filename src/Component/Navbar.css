@@ -9,6 +9,7 @@
     justify-content: space-around;
     align-items: center;
     z-index: 99;
+    background: lightpink;
 }
 .pony-logo {
     width: 8%;

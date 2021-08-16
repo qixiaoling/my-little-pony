@@ -1,16 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import './SearchDetails.css';
+import './SearchDetails.css'
 import PonyCard from "../Component/PonyCard";
-
 
 
 function SearchDetails({searchText}) {
     const [ponyData, setPonyData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     async function fetchData() {
+        setLoading(true);
+        setError(false);
         try {
-            const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}`);
+            const result = await axios.get(`http://ponyweb.ml/v1/character/${searchText}?limit=25`);
             setPonyData(result.data.data);
             console.log(result.data.data)
             console.log(ponyData) /*the problem was that I thought the ponyData was still empty, setState has not worked. because this
@@ -19,22 +22,28 @@ function SearchDetails({searchText}) {
 
         } catch (e) {
             console.error(e);
+            setError(true);
         }
+        setLoading(false)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchData()
-    },[])
+    }, [searchText])
 
 
     return (
-        <div className='search-details-container'>
-            <div className='search-details-section'>
-                <h2>You Have Searched:</h2>
-                <PonyCard ponyData={ponyData}/>
+        <>
+            {error && <span>Oops! Did you get the name right?</span>}
+            {loading && <span>Loading</span>}
+            <div className='search-details-container'>
+                <div className='search-details-section'>
+                    <h2>You Have Searched:</h2>
+                    <PonyCard ponyData={ponyData}/>
+                </div>
             </div>
+        </>
 
-        </div>
     );
 }
 
