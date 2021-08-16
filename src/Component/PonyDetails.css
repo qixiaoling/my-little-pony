@@ -9,6 +9,50 @@
     position: absolute;
     top: 15vh;
     left: 0;
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 
 
+}
+.pony-wrapper {
+    width:45%;
+    height: 100%;
+}
+.pony-wrapper-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.pony-image-btn {
+    background: transparent;
+    border-color: transparent;
+    font-size: 1.25rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.pony-details-image {
+    width: 75%;
+    height: 425px;
+    background-size: cover;
+    background-position: center;
+}
+.pony-wrapper-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+.pony-wrapper-right p {
+    margin-bottom: 1em;
+}
+.pony-kind-wrapper {
+    display: flex;
+}
+.pony-kind {
+    margin-left: 1em;
 }

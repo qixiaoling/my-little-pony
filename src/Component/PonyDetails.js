@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import './PonyDetails.css'
 import axios from "axios";
+import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
+
 
 function PonyDetails() {
     const[index, setIndex] = useState(2);
@@ -45,14 +47,29 @@ function PonyDetails() {
             {ponyData.map((pony)=>{
                 return(
                     <section className='pony-details-section' key={pony.id}>
-                        <div className='pony-left-wrapper'>
-                            <button onClick={()=>prevImage(index)}>
-                                <i className="fas fa-angle-left"/>
+                        <div className='pony-wrapper pony-wrapper-left'>
+                            <button className='pony-image-btn' onClick={()=>prevImage(index)}>
+                                <FaChevronLeft/>
                             </button>
-                            <img src={pony.image[index]}/>
-                            <button onClick={()=>nextImage(index)}>
-                                <i className="fas fa-angle-right"/>
+                            <img className='pony-details-image' src={pony.image[index]}/>
+                            <button className='pony-image-btn' onClick={()=>nextImage(index)}>
+                                <FaChevronRight/>
                             </button>
+
+                        </div>
+                        <div className='pony-wrapper pony-wrapper-right'>
+                            <p>name: {pony.name}</p>
+                            <p>gender: {pony.sex}</p>
+                            <p>occupation: {pony.occupation}</p>
+                            <div className='pony-kind-wrapper'>
+                                <p>kind:</p>
+                                {pony.kind.map((kind)=>{
+                                    return(
+                                        <p className='pony-kind' key={kind.index}>{kind}</p>
+                                    )
+                                })}
+                            </div>
+
 
                         </div>
                     </section>
