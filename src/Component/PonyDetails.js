@@ -104,7 +104,167 @@ function PonyDetails() {
                                        }
                                 >
                                     <ReactPlayer className='pony-video-section' width='70%' height='55vh' controls
+                                                 url='https://www.youtube.com/watch?v=UXbSqJXTvJ0'/>
+                                    <button className='video-btn' onClick={() => setIsModalOpen(false)}>close</button>
+                                </Modal>
+                            </>
+                            }
+                            {pony.id === 2 &&
+                            <>
+                                <button className='video-btn' onClick={() => setIsModalOpen(true)}>see video</button>
+                                <Modal isOpen={isModalOpen}
+                                       onRequestClose={() => setIsModalOpen(false)}
+                                       shouldCloseOnOverlayClick={true}
+                                       style={
+                                           {
+                                               overlay: {
+                                                   backgroundColor: 'grey',
+                                                   position: 'absolute',
+                                                   top: '15vh',
+                                                   left: 0
+                                               },
+                                               content: {
+                                                   color: '#000',
+                                                   backgroundColor: 'lightPink',
+                                                   display: 'flex',
+                                                   flexDirection: 'column',
+                                                   justifyContent:'space-evenly',
+                                                   alignItems:'center'
+                                               }
+
+                                           }
+                                       }
+                                >
+                                    <ReactPlayer className='pony-video-section' width='70%' height='55vh' controls
                                                  url='https://www.youtube.com/watch?v=AHROhpTXssY'/>
+                                    <button className='video-btn' onClick={() => setIsModalOpen(false)}>close</button>
+                                </Modal>
+                            </>
+                            }
+                            {pony.id === 3 &&
+                            <>
+                                <button className='video-btn' onClick={() => setIsModalOpen(true)}>see video</button>
+                                <Modal isOpen={isModalOpen}
+                                       onRequestClose={() => setIsModalOpen(false)}
+                                       shouldCloseOnOverlayClick={true}
+                                       style={
+                                           {
+                                               overlay: {
+                                                   backgroundColor: 'grey',
+                                                   position: 'absolute',
+                                                   top: '15vh',
+                                                   left: 0
+                                               },
+                                               content: {
+                                                   color: '#000',
+                                                   backgroundColor: 'lightPink',
+                                                   display: 'flex',
+                                                   flexDirection: 'column',
+                                                   justifyContent:'space-evenly',
+                                                   alignItems:'center'
+                                               }
+
+                                           }
+                                       }
+                                >
+                                    <ReactPlayer className='pony-video-section' width='70%' height='55vh' controls
+                                                 url='https://www.youtube.com/watch?v=NT0rSNxdw94'/>
+                                    <button className='video-btn' onClick={() => setIsModalOpen(false)}>close</button>
+                                </Modal>
+                            </>
+                            }
+                            {pony.id === 4 &&
+                            <>
+                                <button className='video-btn' onClick={() => setIsModalOpen(true)}>see video</button>
+                                <Modal isOpen={isModalOpen}
+                                       onRequestClose={() => setIsModalOpen(false)}
+                                       shouldCloseOnOverlayClick={true}
+                                       style={
+                                           {
+                                               overlay: {
+                                                   backgroundColor: 'grey',
+                                                   position: 'absolute',
+                                                   top: '15vh',
+                                                   left: 0
+                                               },
+                                               content: {
+                                                   color: '#000',
+                                                   backgroundColor: 'lightPink',
+                                                   display: 'flex',
+                                                   flexDirection: 'column',
+                                                   justifyContent:'space-evenly',
+                                                   alignItems:'center'
+                                               }
+
+                                           }
+                                       }
+                                >
+                                    <ReactPlayer className='pony-video-section' width='70%' height='55vh' controls
+                                                 url='https://www.youtube.com/watch?v=tJiaBI3Ggkw'/>
+                                    <button className='video-btn' onClick={() => setIsModalOpen(false)}>close</button>
+                                </Modal>
+                            </>
+                            }
+                            {pony.id === 5 &&
+                            <>
+                                <button className='video-btn' onClick={() => setIsModalOpen(true)}>see video</button>
+                                <Modal isOpen={isModalOpen}
+                                       onRequestClose={() => setIsModalOpen(false)}
+                                       shouldCloseOnOverlayClick={true}
+                                       style={
+                                           {
+                                               overlay: {
+                                                   backgroundColor: 'grey',
+                                                   position: 'absolute',
+                                                   top: '15vh',
+                                                   left: 0
+                                               },
+                                               content: {
+                                                   color: '#000',
+                                                   backgroundColor: 'lightPink',
+                                                   display: 'flex',
+                                                   flexDirection: 'column',
+                                                   justifyContent:'space-evenly',
+                                                   alignItems:'center'
+                                               }
+
+                                           }
+                                       }
+                                >
+                                    <ReactPlayer className='pony-video-section' width='70%' height='55vh' controls
+                                                 url='https://www.youtube.com/watch?v=pWhZ9dJAhWM'/>
+                                    <button className='video-btn' onClick={() => setIsModalOpen(false)}>close</button>
+                                </Modal>
+                            </>
+                            }
+                            {pony.id === 6 &&
+                            <>
+                                <button className='video-btn' onClick={() => setIsModalOpen(true)}>see video</button>
+                                <Modal isOpen={isModalOpen}
+                                       onRequestClose={() => setIsModalOpen(false)}
+                                       shouldCloseOnOverlayClick={true}
+                                       style={
+                                           {
+                                               overlay: {
+                                                   backgroundColor: 'grey',
+                                                   position: 'absolute',
+                                                   top: '15vh',
+                                                   left: 0
+                                               },
+                                               content: {
+                                                   color: '#000',
+                                                   backgroundColor: 'lightPink',
+                                                   display: 'flex',
+                                                   flexDirection: 'column',
+                                                   justifyContent:'space-evenly',
+                                                   alignItems:'center'
+                                               }
+
+                                           }
+                                       }
+                                >
+                                    <ReactPlayer className='pony-video-section' width='70%' height='55vh' controls
+                                                 url='https://www.youtube.com/watch?v=XdHTSO4iY_g'/>
                                     <button className='video-btn' onClick={() => setIsModalOpen(false)}>close</button>
                                 </Modal>
                             </>
