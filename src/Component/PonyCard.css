@@ -17,6 +17,7 @@
     align-items: center;
     box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
     transition: all 200ms ease-in-out;
+    margin-top: 1em;
 }
 .pony-image {
     width: 100%;

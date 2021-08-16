@@ -25,6 +25,7 @@ function SearchBar ({searchBarQuery}) {
                         id='search-bar'
                         type='text'
                         onChange={changeHandler}
+                        placeholder='enter pony name'
                     />
                 </label>
                 <button className='search-btn' type='button' onClick={handleClick}>

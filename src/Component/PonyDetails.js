@@ -2,14 +2,19 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import './PonyDetails.css'
 import axios from "axios";
-import {FaChevronLeft, FaChevronRight, FaQuoteRight} from 'react-icons/fa';
+import {FaChevronLeft, FaChevronRight} from 'react-icons/fa';
+import Modal from 'react-modal';
+import ReactPlayer from "react-player";
 
+Modal.setAppElement('#root')
 
 function PonyDetails() {
     const [index, setIndex] = useState(2);
     const [ponyData, setPonyData] = useState([])
     const params = useParams();
     console.log(params)
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     async function getPonyData() {
         try {
@@ -72,15 +77,47 @@ function PonyDetails() {
                                     )
                                 })}
                             </div>
+                            {pony.id === 1 &&
+                            <>
+                                <button className='video-btn' onClick={() => setIsModalOpen(true)}>see video</button>
+                                <Modal isOpen={isModalOpen}
+                                       onRequestClose={() => setIsModalOpen(false)}
+                                       shouldCloseOnOverlayClick={true}
+                                       style={
+                                           {
+                                               overlay: {
+                                                   backgroundColor: 'grey',
+                                                   position: 'absolute',
+                                                   top: '15vh',
+                                                   left: 0
+                                               },
+                                               content: {
+                                                   color: '#000',
+                                                   backgroundColor: 'lightPink',
+                                                   display: 'flex',
+                                                   flexDirection: 'column',
+                                                   justifyContent:'space-evenly',
+                                                   alignItems:'center'
+                                               }
+
+                                           }
+                                       }
+                                >
+                                    <ReactPlayer className='pony-video-section' width='70%' height='55vh' controls
+                                                 url='https://www.youtube.com/watch?v=AHROhpTXssY'/>
+                                    <button className='video-btn' onClick={() => setIsModalOpen(false)}>close</button>
+                                </Modal>
+                            </>
+                            }
 
 
                         </div>
                     </section>
                 )
             })}
-        </div>
-    )
+                </div>
+                )
 
-}
+            }
 
 export default PonyDetails;
