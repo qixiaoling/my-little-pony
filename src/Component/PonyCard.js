@@ -1,11 +1,14 @@
 import React from 'react';
+import'./PonyCard.css'
+
+
 function PonyCard({ponyData}){
     return(
-        <div>
+        <div className='pony-card-container'>
             {ponyData.map((pony)=>{
                 return(
-                    <article key={pony.id}>
-                        <img src={pony.image[0]}/>
+                    <article className='pony-article' key={pony.id}>
+                        <img className='pony-image' src={pony.image[0]}/>
                         <p>{pony.name}</p>
             </article>
                 )

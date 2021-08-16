@@ -1,0 +1,13 @@
+.card-section-container {
+    width: 100%;
+    background: lightpink;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3em 0;
+
+
+
+}

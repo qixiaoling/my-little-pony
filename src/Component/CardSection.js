@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import PonyCard from "./PonyCard";
+import './CardSection.css'
+
 function CardSection() {
 
 
@@ -23,7 +25,8 @@ function CardSection() {
     },[])
 
     return(
-        <div>
+        <div className='card-section-container'>
+            <h2>Meet the Magical Friends</h2>
             <PonyCard ponyData={ponyData}/>
         </div>
     )
