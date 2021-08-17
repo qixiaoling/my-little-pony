@@ -11,6 +11,7 @@ function Navbar({navQuery}) {
     function toggleHome() {
         scroll.scrollToTop();
     }
+
     return (
         <nav className='nav-container'>
             <LinkR className='logo-link' to='/' onClick={toggleHome}>

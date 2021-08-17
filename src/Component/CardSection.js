@@ -6,29 +6,39 @@ import './CardSection.css'
 function CardSection() {
 
 
-    const[ponyData, setPonyData] = useState([]);
+    const [ponyData, setPonyData] = useState([]);
 
 
-    async function getDataRarity () {
-        try{
+    async function getDataRarity() {
+        try {
             const result = await axios.get('http://ponyweb.ml/v1/character/all?limit=6');
             setPonyData(result.data.data);
             console.log(result.data.data)
-        }catch(e){
+        } catch (e) {
             console.error(e);
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getDataRarity();
 
-    },[])
+    }, [])
 
-    return(
+    return (
         <div className='card-section-container'>
-            <h2>Meet the Magical Friends</h2>
+            <div className='card-section-title'>
+                <div>
+                    <span className='glitter'>Meet the Magical Friends </span>
+                </div>
+                <br/>
+                <div>
+                    <button className='glitter-btn'>See All</button>
+                </div>
+            </div>
+
             <PonyCard ponyData={ponyData}/>
         </div>
     )
 }
+
 export default CardSection

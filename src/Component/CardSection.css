@@ -9,5 +9,30 @@
     padding: 3em 0;
 
 
+}
+
+
+
+.card-section-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.glitter {
+    font-size: 2rem;
+    font-weight: bold;
+    background: url('https://media.giphy.com/media/OTYiFlofk3EaI/giphy.gif');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
+
+.glitter-btn {
+    padding: 0.25em 0.5em;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
