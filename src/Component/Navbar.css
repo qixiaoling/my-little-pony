@@ -1,5 +1,5 @@
 .nav-container {
-    position: absolute;
+    position: fixed; /*before the smooth-scroll, this was absolute. Now it is changed to fixed, it works still fine.*/
     top:0;
     left:0;
     width: 100%;
@@ -11,8 +11,11 @@
     z-index: 99;
     background: lightpink;
 }
-.pony-logo {
+.logo-link {
     width: 8%;
+}
+.pony-logo {
+    width: 100%;
     background-position: center;
     background-size: cover;
 }
@@ -32,4 +35,5 @@ ul a {
     color: #000;
     text-decoration: none;
     list-style: none;
+    cursor: pointer;
 }

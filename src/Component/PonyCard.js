@@ -10,7 +10,7 @@ function PonyCard({ponyData}){
     }
 
     return(
-        <div className='pony-card-container'>
+        <div className='pony-card-container' id='pony-card'>
             {ponyData.map((pony)=>{
                 return(
                     <article className='pony-article' key={pony.id} onClick={()=>viewPonyDetails(pony.id)}>
