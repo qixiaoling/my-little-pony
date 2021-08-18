@@ -1,5 +1,5 @@
 .nav-container {
-    position: fixed; /*before the smooth-scroll, this was absolute. Now it is changed to fixed, it works still fine.*/
+    position: sticky; /*before the smooth-scroll, this was absolute. Now it is changed to fixed, it works still fine.*/
     top:0;
     left:0;
     width: 100%;
