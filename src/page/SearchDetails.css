@@ -1,12 +1,15 @@
 .search-details-container {
     width: 100%;
     height: 100vh;
-    background: lightpink;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     position: relative;
 
 }
 .search-details-section {
-    background: lightpink;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
     position: absolute;/*it is absolute, there it comes out of the flow,
     therefore the container above has nothing in it.*/
     top: 15vh;

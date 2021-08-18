@@ -32,7 +32,7 @@ function CardSection() {
                 </div>
                 <br/>
                 <div>
-                    <button className='glitter-btn'>See All</button>
+                    <button className='glitter-btn' >See All</button>
                 </div>
             </div>
 

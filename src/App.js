@@ -5,7 +5,7 @@ import Home from "./page/Home";
 import PonyDetails from "./Component/PonyDetails";
 import Navbar from "./Component/Navbar";
 import SearchDetails from "./page/SearchDetails";
-
+import Footer from "./Component/Footer";
 
 function App() {
 
@@ -25,6 +25,7 @@ function App() {
               <SearchDetails  searchText = {searchText}/>
           </Route>
       </Switch>
+        <Footer />
     </Router>
   );
 }
