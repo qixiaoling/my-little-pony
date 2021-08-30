@@ -27,7 +27,7 @@ function Navbar({navQuery}) {
                     </LinkS>
                 </li>
                 <li>
-                    <LinkR to='/product'>
+                    <LinkR to='/products'>
                         Products
                     </LinkR>
                 </li>
