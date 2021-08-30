@@ -1,40 +1,29 @@
-import React, { Component } from "react";
-import { storeProducts } from "../data";
-const ProductContext = React.createContext();
+import React, {useState, createContext, useEffect} from "react";
+import {storeProducts} from "../data";
 
-class ProductProvider extends Component {
-    state = {
-        products: [],
-    };
-    componentDidMount() {
-        this.setProducts();
-    }
+export const ProductContext = createContext({});
 
-    setProducts = () => {
-        let products = [];
-        storeProducts.forEach(item => {
-            const singleItem = { ...item };
-            products = [...products, singleItem];
-        });
-        this.setState(() => {
-            return {products};
-        })
+export function ProductProvider({children}) {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        setProducts(storeProducts)
+    }, [])
 
-    }
-    render() {
-        return (
+
+
+    return (
+        <>
             <ProductContext.Provider
                 value={{
-                    ...this.state,
-
+                    products: products,
+                    setProducts: setProducts,
                 }}
             >
-                {this.props.children}
+                {children}
             </ProductContext.Provider>
-        );
-    }
-}
-const ProductConsumer = ProductContext.Consumer;
+        </>
 
-export { ProductProvider, ProductConsumer };
+    )
+}
+
 
