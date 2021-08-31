@@ -14,7 +14,7 @@ export function ProductProvider({children}) {
         refreshProducts()
     }, [])
 
-    function refreshProducts (){
+    function refreshProducts() {
         const tempItems = [...storeProducts];
         setProducts(tempItems)
         // let tempProducts = [];
@@ -27,32 +27,34 @@ export function ProductProvider({children}) {
     }
 
     function getItem(id) {
-        const item = products.find((item)=>item.id === id);
-        return item;
+        return products.find((item) => item.id === id);
+
     }
 
-    function addToCart(id){
+    function addToCart(id) {
         const tempProducts = [...products];
-       const index = tempProducts.indexOf(getItem(id));
-       const product = tempProducts[index];
-       product.inCart = true;
-       product.count = 1;
-       product.total = product.price;
+        const index = tempProducts.indexOf(getItem(id));
+        const product = tempProducts[index];
+        product.inCart = true;
+        product.count = 1;
+        product.total = product.price;
 
-       setProducts(tempProducts);
-       setCart([...cart,product]);
-       setDetailProduct(product)
+        setProducts(tempProducts);
+        setCart([...cart, product]);
+    }
+    function handleDetails(id){
+        const tempProduct = getItem(id);
+        setDetailProduct(tempProduct);
+        console.log(detailProduct);
+    }
 
-    }
-    function handleDetail(id) {
-        console.log('detailed'+id)
-    }
-    function openModal(id){
+    function openModal(id) {
         const tempItem = getItem(id);
         setModalProduct(tempItem);
         setModalOpen(true);
     }
-    function closeModal(){
+
+    function closeModal() {
         setModalOpen(false);
     }
 
@@ -63,12 +65,19 @@ export function ProductProvider({children}) {
                 value={{
                     products: products,
                     setProducts: setProducts,
+                    cart: cart,
+                    setCart: setCart,
+                    detailProduct: detailProduct,
+                    setDetailProduct: setDetailProduct,
                     addToCart: addToCart,
-                   handleDetail: handleDetail,
+                    modalOpen: modalOpen,
+                    setModalOpen: setModalOpen,
+                    modalProduct: modalProduct,
+                    setModalProduct: setModalProduct,
+                    handleDetail: handleDetails,
                     openModal: openModal,
                     closeModal: closeModal,
-                    modalOpen: modalOpen,
-                    modalProduct: modalProduct,
+
 
                 }}
             >

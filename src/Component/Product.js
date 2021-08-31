@@ -9,10 +9,8 @@ function Product(props) {
     return (
 
         <ProductContainer>
-            <div className='product-container-top'
-                onClick={()=>handleDetail(id)}
-            >
-                <LinkR to='/detail'>
+            <div className='product-container-top'>
+                <LinkR to='/detail' onClick={()=>handleDetail(id)}>
                     <img className='product-img' src={img} alt={title}/>
                 </LinkR>
 
