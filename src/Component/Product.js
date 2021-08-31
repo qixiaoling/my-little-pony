@@ -5,7 +5,7 @@ import {Link as LinkR}  from 'react-router-dom';
 
 function Product(props) {
     const { id, title, img, price, inCart} = props.product;
-    const {addToCart, handleDetail} = useContext(ProductContext);
+    const {addToCart, handleDetail, openModal} = useContext(ProductContext);
     return (
 
         <ProductContainer>
@@ -16,7 +16,13 @@ function Product(props) {
                     <img className='product-img' src={img} alt={title}/>
                 </LinkR>
 
-                <button className='cart-btn' onClick={()=>addToCart(id)}>
+                <button
+                    className='cart-btn'
+                    onClick={()=>{
+                        addToCart(id);
+                        openModal(id);
+                    }}
+                >
                     {inCart ? "In Cart" : <i className="fas fa-cart-plus"/>}
                 </button>
             </div>

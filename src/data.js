@@ -13,7 +13,7 @@ import ponyTen from './Assets/Images/product_10.jpg'
 export const storeProducts = [
     {
         id: 1,
-        title: "My Little Pony: A New Generation Movie Royal Racing Ziplines - 22-Inch Castle Playset with Ziplines, Princess Petals Toy",
+        title: "Princess Petals Toy",
         img: ponyOne,
         price: 41.99,
         ages: "5 years+",
@@ -25,7 +25,7 @@ export const storeProducts = [
     },
     {
         id: 2,
-        title: "My Little Pony: A New Generation Movie Snow Party Countdown Advent Calendar Toy for Kids - 25 Surprise Pieces",
+        title: "25 Surprise Pieces",
         img: ponyTwo,
         price: 26.49,
         ages: "3 years+",
@@ -36,7 +36,7 @@ export const storeProducts = [
     },
     {
         id: 3,
-        title: "My Little Pony: A New Generation Movie Musical Star Princess Petals - 6-Inch Pony Toy that Plays Music for Kids 5 and Up",
+        title: "6-Inch Pony Toy that Plays Music for Kids 5 and Up",
         img: ponyThree,
         price: 20.99,
         ages: "3 years+",
@@ -47,7 +47,7 @@ export const storeProducts = [
     },
     {
         id: 4,
-        title: "My Little Pony: A New Generation Movie Crystal Adventure Sisters Toy - 2 Figures and 40 Surprise Accessories",
+        title: "2 Figures and 40 Surprise Accessories",
         img: ponyFour,
         price: 15.99,
         ages: "5 years+",
@@ -58,7 +58,7 @@ export const storeProducts = [
     },
     {
         id: 5,
-        title: "My Little Pony: A New Generation Rainbow Reveal Sunny Starscout - 6-Inch Orange Pony Toy with Rainbow Braid, 17 Accessories",
+        title: "6-Inch Orange Pony Toy with Rainbow Braid, 17 Accessories",
         img: ponyFive,
         price: 15.99,
         ages: "5 years+",
@@ -70,7 +70,7 @@ export const storeProducts = [
     },
     {
         id: 6,
-        title: 'My Little Pony: A New Generation Movie Crystal Adventure Princess Petals - 3-Inch Pink Pony Toy, Surprise Accessories',
+        title: '3-Inch Pink Pony Toy, Surprise Accessories',
         img: ponySix,
         price: 8.49,
         ages: "5 years+",
@@ -81,7 +81,7 @@ export const storeProducts = [
     },
     {
         id: 7,
-        title: "My Little Pony: A New Generation Movie Friends Figure - 3-Inch Pony Toy for Kids Ages 3 and Up",
+        title: "3-Inch Pony Toy for Kids Ages 3 and Up",
         img: ponySeven,
         price: 2.9,
         ages: "3 years+",
@@ -92,7 +92,7 @@ export const storeProducts = [
     },
     {
         id: 8,
-        title: "My Little Pony Equestria Girls Fashion Squad Doll – 1 Toy Figure with Fashion Accessories",
+        title: "1 Toy Figure with Fashion Accessories",
         img: ponyEight,
         price: 5.19,
         ages: "5 years+",
@@ -103,7 +103,7 @@ export const storeProducts = [
     },
     {
         id: 9,
-        title: "My Little Pony Smashin’ Fashion Party 2-Pack -- 30 Pieces, Pinkie Pie and DJ Pon-3 Poseable Figures with Toy Accessories",
+        title: "3 Poseable Figures with Toy Accessories",
         img: ponyNine,
         price: 20.99,
         ages: "5 years+",
@@ -114,7 +114,7 @@ export const storeProducts = [
     },
     {
         id: 10,
-        title: "My Little Pony Best Hair Day Princess Cadance -- 5-Inch Hair-Styling Pony Figure with 17 Accessories, Ages 4 and Up",
+        title: "5-Inch Hair-Styling Pony Figure with 17 Accessories",
         img: ponyTen,
         price: 15.99,
         ages: "4 years+",

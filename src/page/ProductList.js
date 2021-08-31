@@ -2,18 +2,23 @@ import React, {useContext} from "react";
 import {ProductContext} from "../context/productContext";
 import Product from "../Component/Product";
 import styled from "styled-components";
+import Modal from "../Component/Modal";
 
 function ProductList() {
 
     const {products} = useContext(ProductContext);
     return (
-        <ProductListContainer>
+        <>
+            <ProductListContainer>
                 {products.map(product=>{
                     return(
                         <Product key={product.id} product={product}/>
                     )
                 })}
-        </ProductListContainer>
+            </ProductListContainer>
+            <Modal/>
+        </>
+
     )
 }
 export default ProductList

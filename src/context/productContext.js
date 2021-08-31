@@ -7,6 +7,8 @@ export function ProductProvider({children}) {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
     const [detailProduct, setDetailProduct] = useState(null);
+    const [modalProduct, setModalProduct] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         refreshProducts()
@@ -41,11 +43,18 @@ export function ProductProvider({children}) {
        setCart([...cart,product]);
        setDetailProduct(product)
 
-
-
     }
     function handleDetail(id) {
         console.log('detailed'+id)
+    }
+    function openModal(id){
+        const tempItem = getItem(id);
+        setModalProduct(tempItem);
+        setModalOpen(true);
+    }
+    function closeModal(){
+        setModalOpen(false);
+        setModalProduct([]);
     }
 
 
@@ -57,6 +66,8 @@ export function ProductProvider({children}) {
                     setProducts: setProducts,
                     addToCart: addToCart,
                    handleDetail: handleDetail,
+                    openModal: openModal,
+                    closeModal: closeModal,
 
                 }}
             >
