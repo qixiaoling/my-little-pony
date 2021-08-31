@@ -54,7 +54,6 @@ export function ProductProvider({children}) {
     }
     function closeModal(){
         setModalOpen(false);
-        setModalProduct([]);
     }
 
 
