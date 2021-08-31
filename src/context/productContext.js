@@ -1,20 +1,51 @@
 import React, {useState, createContext, useEffect} from "react";
-import {storeProducts} from "../data";
+import {storeProducts, detailProduct} from "../data";
 
 export const ProductContext = createContext({});
 
 export function ProductProvider({children}) {
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
+    const [detailProduct, setDetailProduct] = useState(null);
 
     useEffect(() => {
-        setProducts(storeProducts)
+        refreshProducts()
     }, [])
 
+    function refreshProducts (){
+        const tempItems = [...storeProducts];
+        setProducts(tempItems)
+        // let tempProducts = [];
+        // storeProducts.forEach((item)=>{
+        //     const tempItem = {...item};
+        //     tempProducts = [tempProducts, tempItem];
+        // })
+        // setProducts(tempProducts)
+
+    }
+
+    function getItem(id) {
+        const item = products.find((item)=>item.id === id);
+        return item;
+    }
+
     function addToCart(id){
-        console.log("hi from addToCart"+id)
+        const tempProducts = [...products];
+       const index = tempProducts.indexOf(getItem(id));
+       const product = tempProducts[index];
+       product.inCart = true;
+       product.count = 1;
+       product.total = product.price;
+
+       setProducts(tempProducts);
+       setCart([...cart,product]);
+       setDetailProduct(product)
+
+
+
     }
     function handleDetail(id) {
-        console.log('set detail data ready'+ id)
+        console.log('detailed'+id)
     }
 
 

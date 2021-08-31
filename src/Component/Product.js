@@ -47,7 +47,6 @@ const ProductContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 19;
     
   }
 
@@ -55,13 +54,32 @@ const ProductContainer = styled.div`
     width: 100%;
     background-size: cover;
     background-position: center;
+    transition: all 500ms ease-in-out;
   }
   .cart-btn {
     position: absolute;
     right: 0;
     bottom: 0;
-    z-index: 20;
+    transform: translate(100%, 100%);
+    transition: all 500ms ease-in-out;
+    padding: 0.2em 0.4em;
+    font-size: 1.4rem;
+    background: rgb(238,174,202);
+    color: white;
+    border-radius: 0.5rem 0 0 0;
     
+    
+  }
+  .cart-btn:hover {
+    color: rgba(148,187,233,1);
+    background: white;
+  }
+  .product-container-top:hover .cart-btn { 
+    /*When mouse hovering the bigger container, what happens to the button inside of the container*/
+    transform: translate(0, 0);
+  }
+  .product-container-top:hover .product-img {
+    transform:scale(1.2);
   }
   .product-text {
     font-family: 'Lato', sans-serif;
