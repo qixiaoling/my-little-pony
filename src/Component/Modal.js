@@ -17,7 +17,7 @@ function Modal() {
                     <button>Go To Cart</button>
                 </ModalContainer>
                 :
-                <>null</>
+                <></>
 
             }
         </>
@@ -33,4 +33,5 @@ const ModalContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background: lightblue;
 `

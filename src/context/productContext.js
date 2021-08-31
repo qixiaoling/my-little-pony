@@ -68,6 +68,8 @@ export function ProductProvider({children}) {
                    handleDetail: handleDetail,
                     openModal: openModal,
                     closeModal: closeModal,
+                    modalOpen: modalOpen,
+                    modalProduct: modalProduct,
 
                 }}
             >
