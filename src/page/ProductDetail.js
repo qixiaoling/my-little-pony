@@ -1,9 +1,10 @@
 import React, {useContext} from 'react';
 import styled from "styled-components";
 import {ProductContext} from "../context/productContext";
+import {Link as LinkR } from 'react-router-dom';
 
 function ProductDetail(){
-    const {detailProduct} =useContext(ProductContext);
+    const {detailProduct, addToCart, openModal} = useContext(ProductContext);
     return(
         <ProductDetailContainer>
             <div className='detail-left'>
@@ -13,6 +14,20 @@ function ProductDetail(){
                 <h2>{detailProduct.title}</h2>
                 <p>${detailProduct.price}</p>
                 <p>{detailProduct.info}</p>
+                <LinkR to='/products'>
+                    <button>
+                        Back to products
+                    </button>
+                </LinkR>
+                <button
+                    disabled={detailProduct.inCart? true : false}
+
+                    onClick={()=>{
+                        addToCart(detailProduct.id);
+                        openModal(detailProduct.id);
+                    }}>
+                    {detailProduct.inCart ? 'In Cart' : 'Add to Cart '}
+                </button>
             </div>
         </ProductDetailContainer>
 

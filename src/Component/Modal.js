@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import styled from "styled-components";
 import {ProductContext} from "../context/productContext";
+import {Link as LinkR} from "react-router-dom";
 
 function Modal() {
     const {modalProduct, modalOpen, closeModal} = useContext(ProductContext);
@@ -14,8 +15,16 @@ function Modal() {
                         <img src={modalProduct.img} alt={modalProduct.title} className='modal-img'/>
                         <p>{modalProduct.title}</p>
                         <p>${modalProduct.price}</p>
-                        <button onClick={()=>closeModal()}>Continue Shopping</button>
-                        <button onClick={()=>closeModal()}>Go To Cart</button>
+                        <LinkR to='/products'>
+                            <button onClick={()=>closeModal()}>
+                                Continue Shopping
+                            </button>
+                        </LinkR>
+                        <LinkR to='/cart'>
+                            <button onClick={()=>closeModal()}>
+                               Go to Cart
+                            </button>
+                        </LinkR>
                     </div>
                 </ModalContainer>
                 :

@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {ProductContext} from "../context/productContext";
 import Product from "../Component/Product";
 import styled from "styled-components";
-import Modal from "../Component/Modal";
+
 
 function ProductList() {
 
@@ -16,7 +16,7 @@ function ProductList() {
                     )
                 })}
             </ProductListContainer>
-            <Modal/>
+
         </>
 
     )
