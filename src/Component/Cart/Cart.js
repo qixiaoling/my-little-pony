@@ -53,7 +53,9 @@ const CartContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   
-  .th {
-    border: 1px solid lightgray;
+  table {
+    width: 100%;
+    height: auto;
+    text-align: center;
   }
 `

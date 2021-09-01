@@ -58,6 +58,29 @@ export function ProductProvider({children}) {
         setModalOpen(false);
     }
 
+    function increment(id){
+     const tempCart = [...cart];
+     const tempProduct = tempCart.find((item)=> item.id === id);
+     const index = tempCart.indexOf(tempProduct)
+     const selectedProduct = tempCart[index];
+     selectedProduct.count = selectedProduct.count+1;
+     selectedProduct.total = selectedProduct.count * selectedProduct.price;
+     setCart([...tempCart])
+    }
+
+    function decrement(id){
+        const tempCart = [...cart];
+        const tempProduct = tempCart.find((item)=>item.id === id);
+        const index = tempCart.indexOf(tempProduct);
+        const selectedProduct = tempCart[index];
+        if(selectedProduct.count>1){
+            selectedProduct.count = selectedProduct.count-1;
+        }else{
+            removeItem(id)
+        }
+
+    }
+
 
     return (
         <>
@@ -77,6 +100,7 @@ export function ProductProvider({children}) {
                     handleDetail: handleDetails,
                     openModal: openModal,
                     closeModal: closeModal,
+                    increment: increment,
 
 
                 }}
