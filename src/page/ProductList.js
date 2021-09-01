@@ -7,6 +7,7 @@ import styled from "styled-components";
 function ProductList() {
 
     const {products} = useContext(ProductContext);
+    console.log(products)
     return (
         <>
             <ProductListContainer>
