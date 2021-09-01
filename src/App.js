@@ -6,6 +6,9 @@ import PonyDetails from "./Component/PonyDetails";
 import Navbar from "./Component/Navbar";
 import SearchDetails from "./page/SearchDetails";
 import Footer from "./Component/Footer";
+import ProductList from "./page/ProductList";
+import ProductDetail from "./page/ProductDetail";
+import Modal from "./Component/Modal";
 
 function App() {
 
@@ -21,11 +24,18 @@ function App() {
         <Route exact path='/pony/:id'>
             <PonyDetails />
         </Route>
+          <Route exact path='/products'>
+              <ProductList />
+          </Route>
+          <Route exact path='/detail'>
+              <ProductDetail />
+          </Route>
           <Route exact path='/search'>
               <SearchDetails  searchText = {searchText}/>
           </Route>
       </Switch>
         <Footer />
+        <Modal/>
     </Router>
   );
 }
