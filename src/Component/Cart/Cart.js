@@ -3,6 +3,7 @@ import {ProductContext} from "../../context/productContext";
 import EmptyCart from "./EmptyCart";
 import styled from "styled-components";
 import CartItem from "./CartItem";
+import CartTotals from "./CartTotals";
 
 function Cart() {
     const {cart} = useContext(ProductContext);
@@ -33,6 +34,7 @@ function Cart() {
                         })}
                         </tbody>
                     </table>
+                    <CartTotals/>
                 </CartContainer>
                 :
                 <EmptyCart/>
