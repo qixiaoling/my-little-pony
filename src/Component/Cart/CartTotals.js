@@ -1,15 +1,27 @@
 import React, {useContext} from 'react';
 import styled from "styled-components";
 import {ProductContext} from "../../context/productContext";
+import {Link as LinkR} from 'react-router-dom';
+
 
 function CartTotals() {
-    const {cartSubTotal, cartTaxAmount, cartTotal} = useContext(ProductContext);
+
+    const {cart, clearCart, cartSubTotal, cartTax, cartTotal} = useContext(ProductContext);
+    console.log(cart.length)
+
     return(
+
         <CartTotalContainer>
             <div>
-                <p>Subtotal: ${cartSubTotal}</p>
-                <p>Tax: ${cartTaxAmount}</p>
-                <p>Total: ${cartTotal}</p>
+                <LinkR to='/products'>
+                    <button onClick={()=>{clearCart()}}>
+                        clear cart
+                    </button>
+                </LinkR>
+                <p>Subtotal: {cartSubTotal}</p>
+                <p>Tax: {cartTax}</p>
+                <p>Total: {cartTotal}</p>
+                <p>{console.log(cartSubTotal)}</p>
             </div>
         </CartTotalContainer>
     )
@@ -22,6 +34,6 @@ const CartTotalContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-end;
+  align-items: flex-start;
   
 `

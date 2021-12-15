@@ -34,6 +34,9 @@ function Navbar({navQuery}) {
                 <li>
                     <SearchBar searchBarQuery={navQuery}/>
                 </li>
+                <li>
+                    <LinkR to='/cart'>Cart</LinkR>
+                </li>
             </ul>
         </nav>
     )

@@ -9,9 +9,9 @@ export function ProductProvider({children}) {
     const [detailProduct, setDetailProduct] = useState(null);
     const [modalProduct, setModalProduct] = useState(null);
     const [modalOpen, setModalOpen] = useState(false);
-    const [cartSubTotal, setCartSubTotal] = useState(0);
-    const [cartTaxAmount, setCartTaxAmount] = useState(0);
-    const [cartTotal, setCartTotal] = useState(0);
+    const [cartSubTotal, setCartSubTotal] = useState(7);
+    const [cartTax, setCartTax] = useState(7);
+    const [cartTotal, setCartTotal] = useState(7);
 
     useEffect(() => {
         refreshProducts()
@@ -29,12 +29,18 @@ export function ProductProvider({children}) {
 
     }
 
+    function clearCart() {
+        setCart([]);
+        refreshProducts();
+    }
+
+
     function getItem(id) {
         return products.find((item) => item.id === id);
 
     }
 
-    function addToCart(id) {
+    function addToCart(id) {/*look for index!!!*/
         const tempProducts = [...products];
         const index = tempProducts.indexOf(getItem(id));
         const product = tempProducts[index];
@@ -43,7 +49,18 @@ export function ProductProvider({children}) {
         product.total = product.price;
 
         setProducts(tempProducts);
-        setCart([...cart, product]);
+        cart.push(product);
+        console.log(cart.length)
+        addingTotal()
+
+
+    }
+    function addingTotal() {
+        let temp = 0;
+        for(let i=0;i<cart.length;i++){
+            temp += cart[i].total;
+        }
+        setCartSubTotal(temp);
     }
 
     function handleDetails(id) {
@@ -62,7 +79,7 @@ export function ProductProvider({children}) {
         setModalOpen(false);
     }
 
-    function increment(id) {
+    function increment(id) {/*look for index!!!*/
         const tempCart = [...cart];
         const tempProduct = tempCart.find((item) => item.id === id);
         const index = tempCart.indexOf(tempProduct)
@@ -70,10 +87,10 @@ export function ProductProvider({children}) {
         selectedProduct.count = selectedProduct.count + 1;
         selectedProduct.total = selectedProduct.count * selectedProduct.price;
         setCart([...tempCart])
-        addCartTotal();
+
     }
 
-    function decrement(id) {
+    function decrement(id) {/*look for index!!!*/
         const tempCart = [...cart];
         const tempProduct = tempCart.find((item) => item.id === id);
         const index = tempCart.indexOf(tempProduct);
@@ -84,13 +101,13 @@ export function ProductProvider({children}) {
         } else {
             selectedProduct.total = selectedProduct.price * selectedProduct.count;
             setCart(tempCart);
-            addCartTotal();
+
 
         }
     }
 
 
-    function removeItem(id) {
+    function removeItem(id) {/*look for index!!!*/
         let tempProduct = [...products];
         let tempCart = [...cart];
 
@@ -103,25 +120,13 @@ export function ProductProvider({children}) {
 
         setProducts(tempProduct);
 
-        tempCart = tempCart.filter(item => item.id != id)
+        tempCart = tempCart.filter(item => item.id !== id)
         setCart(tempCart);
 
 
     }
 
-    function addCartTotal() {
-        let subTotal = 0;
-        for (let i = 0; i < cart.length - 1; i++) {
-            subTotal = subTotal + cart[i].total;
-            return subTotal;
-        }
-        const taxAmount = subTotal * 0.2;
-        const total = subTotal + taxAmount;
 
-        setCartSubTotal(subTotal);
-        setCartTaxAmount(taxAmount);
-        setCartTotal(total);
-    }
 
 
     return (
@@ -134,7 +139,7 @@ export function ProductProvider({children}) {
                     setCart: setCart,
                     detailProduct: detailProduct,
                     cartSubTotal: cartSubTotal,
-                    cartTaxAmount: cartTaxAmount,
+                    cartTax: cartTax,
                     cartTotal: cartTotal,
                     setDetailProduct: setDetailProduct,
                     addToCart: addToCart,
@@ -148,7 +153,7 @@ export function ProductProvider({children}) {
                     increment: increment,
                     decrement: decrement,
                     removeItem: removeItem,
-                    addCartTotal: addCartTotal,
+                    clearCart: clearCart,
 
 
                 }}
