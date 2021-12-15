@@ -1,0 +1,10 @@
+.cart-item-img {
+    width: 200px;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+}
+.count-update span{
+
+    margin-left: 0.5em;
+}

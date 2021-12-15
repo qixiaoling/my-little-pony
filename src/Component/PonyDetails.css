@@ -1,0 +1,66 @@
+.pony-details-container {
+    width: 100%;
+    height: 90vh;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    position: relative;
+
+}
+.pony-details-section {
+    /*position: absolute;*/
+    /*top: 15vh;*/
+    /*left: 0;*/
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+.pony-wrapper {
+    width:45%;
+    height: 100%;
+}
+.pony-wrapper-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.pony-image-btn {
+    background: transparent;
+    border-color: transparent;
+    font-size: 1.25rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.pony-details-image {
+    width: 75%;
+    height: 425px;
+    background-size: cover;
+    background-position: center;
+}
+.pony-wrapper-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+.pony-wrapper-right p {
+    margin-bottom: 1em;
+}
+.pony-kind-wrapper {
+    display: flex;
+}
+.pony-kind {
+    margin-left: 1em;
+}
+.video-btn {
+    background: lightgrey;
+    padding: 0.25em 0.5em;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    border-radius: 6px;
+}

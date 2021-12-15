@@ -1,0 +1,24 @@
+.search-details-container {
+    width: 100%;
+    min-height: 90vh;/*see below comments, this is min-height, so that it grows as the content grows*/
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    position: relative;
+
+}
+.search-details-section {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    /*below is finally not used, because nav should be just sticky and the rest page is 90vh*/
+    /*old comment see below*/
+    /*position: absolute;!*it is absolute, there it comes out of the flow,*/
+    /*therefore the container above has nothing in it.*!*/
+    /*top: 15vh;*/
+    /*left: 0;*/
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
