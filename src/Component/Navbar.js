@@ -21,7 +21,7 @@ function Navbar({navQuery}) {
             <ul>
                 <li>
                     <LinkS to='pony-card'
-                           smooth={true} duration={500} spy={true} exact='true'
+                           smooth={true} duration={500} offset={10}
                     >
                         Meeting the friends
                     </LinkS>

@@ -56,7 +56,6 @@ export function ProductProvider({children}) {
         cart.push(product);/*&&2 Smilga
            wrote : cart: [...this.state.cart, product]
            this does not work!*/
-        console.log(cart.length)
         addingTotal()
 
 
@@ -113,6 +112,7 @@ export function ProductProvider({children}) {
         } else {
             selectedProduct.total = selectedProduct.price * selectedProduct.count;
             setCart(tempCart);
+            addingTotal()
 
 
         }

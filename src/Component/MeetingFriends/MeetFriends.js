@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import PonyCard from "./PonyCard";
-import './CardSection.css'
+import PonyCard from "../PonyCard";
+import './MeetingFriends.css'
 
-function CardSection() {
+function MeetFriends() {
 
 
     const [ponyData, setPonyData] = useState([]);
 
 
-    async function getDataRarity() {
+    async function getData() {
         try {
             const result = await axios.get('http://ponyweb.ml/v1/character/all?limit=6');
             setPonyData(result.data.data);
@@ -20,9 +20,11 @@ function CardSection() {
     }
 
     useEffect(() => {
-        getDataRarity();
+        getData();
 
     }, [])
+
+
 
     return (
         <div className='card-section-container'>
@@ -32,7 +34,7 @@ function CardSection() {
                 </div>
                 <br/>
                 <div>
-                    <button className='glitter-btn' >See All</button>
+                    <button className='glitter-btn' > See All</button>
                 </div>
             </div>
 
@@ -41,4 +43,4 @@ function CardSection() {
     )
 }
 
-export default CardSection
+export default MeetFriends

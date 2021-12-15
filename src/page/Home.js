@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroSection from "../Component/HeroSection";
-import CardSection from "../Component/CardSection";
+import MeetFriends from "../Component/MeetingFriends/MeetFriends";
 
 
 
@@ -9,7 +9,7 @@ function Home() {
     return(
         <div className='home-container'>
             <HeroSection/>
-            <CardSection />
+            <MeetFriends />
         </div>
     )
 }
