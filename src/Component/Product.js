@@ -16,6 +16,7 @@ function Product(props) {
 
                 <button
                     className='cart-btn'
+                    disabled={inCart? true:false}
                     onClick={()=>{
                         addToCart(id);
                         openModal(id);
