@@ -18,14 +18,18 @@ export function ProductProvider({children}) {
     }, [])
 
     function refreshProducts() {
-        const tempItems = [...storeProducts];
-        setProducts(tempItems)
-        // let tempProducts = [];
-        // storeProducts.forEach((item)=>{
-        //     const tempItem = {...item};
-        //     tempProducts = [tempProducts, tempItem];
-        // })
-        // setProducts(tempProducts)
+        // const tempItems = [...storeProducts];
+        // setProducts(tempItems)
+        let tempProducts = [];
+        storeProducts.forEach((item)=>{
+            const tempItem = {...item};
+           tempProducts.push(tempItem); /*&&1 Smilga
+           uses tempProducts = [ ...tempProducts, tempItem ]
+            this does not work, same thing goes for the
+            function "addToCart" cart.push(product);
+            */
+        })
+        setProducts(tempProducts)
 
     }
 
@@ -49,7 +53,9 @@ export function ProductProvider({children}) {
         product.total = product.price;
 
         setProducts(tempProducts);
-        cart.push(product);
+        cart.push(product);/*&&2 Smilga
+           wrote : cart: [...this.state.cart, product]
+           this does not work!*/
         console.log(cart.length)
         addingTotal()
 
@@ -61,6 +67,11 @@ export function ProductProvider({children}) {
             temp += cart[i].total;
         }
         setCartSubTotal(temp);
+        const tempTax = temp * 0.1;
+        const tax = parseFloat(tempTax.toFixed(2));
+        const total = temp + tax;
+        setCartTax(tax);
+        setCartTotal(total);
     }
 
     function handleDetails(id) {
