@@ -87,6 +87,7 @@ export function ProductProvider({children}) {
         selectedProduct.count = selectedProduct.count + 1;
         selectedProduct.total = selectedProduct.count * selectedProduct.price;
         setCart([...tempCart])
+        addingTotal();
 
     }
 
